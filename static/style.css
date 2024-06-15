@@ -54,6 +54,8 @@ body {
   align-items: center;
   justify-content: center;
   height: 100svh;
+  background-image: url('./assets/campus.webp');
+  backdrop-filter: blur(10px);
 }
 
 li {
