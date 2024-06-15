@@ -102,20 +102,34 @@ p {
 .main-form {
   display: flex;
   width: 50%;
-  height: fit-content;
+  height: 100%;
   background: rgb(245, 245, 245);
   flex-direction: column;
-  margin-right: auto;
-  margin-left: auto;
   gap: 20px;
   padding: 30px;
+  box-sizing: border-box;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
-  margin-bottom: 100px;
+}
+
+.result-form {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  background: rgb(245, 245, 245);
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+  box-sizing: border-box;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  align-items: center;
+  justify-content: center;
 }
 
 .main-info {
   width: 50%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -129,6 +143,23 @@ p {
 
 .main-info :nth-child(3){
   font-size: 25px;
+}
+
+
+.result-heading {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.result-text {
+  font-weight: normal;
+  font-size: large;
+}
+
+
+.result-text strong {
+  font-weight: 800;
+  color: red;
 }
 
 /* 공통 레퍼 스타일링 */
@@ -198,6 +229,7 @@ button {
   background: rgb(30, 164, 218);
   margin-top: 30px;
   font-size: medium;
+  width: 100%;
 }
 
 button:hover { 

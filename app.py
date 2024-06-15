@@ -14,8 +14,8 @@ class InfoInput(Form):
     age = IntegerField('',
                       [validators.DataRequired(),
                       validators.NumberRange(min=0, max=1000)])
-    hypertension = RadioField('', choices=[(0, 'Yes'),(1, 'No')])
-    heart_disease = RadioField('', choices=[(0, 'Yes'),(1, 'No')])
+    hypertension = RadioField('', [validators.DataRequired()], choices=[(0, 'Yes'),(1, 'No')])
+    heart_disease = RadioField('', [validators.DataRequired()], choices=[(0, 'Yes'),(1, 'No')])
     bmi = DecimalField('',
                             [validators.DataRequired(),
                             validators.NumberRange(min=0, max=50)],
@@ -36,6 +36,14 @@ def map_smoking_values(num):
   list = [0, 0, 0, 0, 0]
   list[num] = 1
   return list
+
+def result_text(result):
+  if result == 0 :
+    return '없음'
+  elif result == 1:
+    return '있음'
+  else: return
+
 
 @app.route('/')
 def home():
@@ -58,10 +66,9 @@ def predict():
     
     # Make prediction
     prediction = model.predict(features)
-    
-    # Return the result
-    # return jsonify({'prediction': int(prediction[0])})
-    # return render_template('results.html', results=int(prediction[0]))
-    return render_template('results.html', results=int(prediction[0]))
+
+    text = result_text(int(prediction[0]))
+
+    return render_template('results.html', results=text)
 if __name__ == '__main__':
     app.run(debug=True)
