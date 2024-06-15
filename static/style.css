@@ -1,0 +1,206 @@
+
+/* 기본 CSS 스타일링 제거 */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* ------------------------------------------------------------------------------ */
+
+/* 공통 요소 스타일링 */
+
+body {
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  height: 100svh;
+}
+
+li {
+  list-style: none;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  display: block;
+  box-sizing: border-box;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+p {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+
+.school-logo {
+  width: 200px;
+}
+
+.main-container {
+  display: flex;
+  height: 600px;
+  width: 1000px;
+  background: white;
+  box-shadow: 1px 20px 19px -1px rgba(0,0,0,0.39);
+  -webkit-box-shadow: 1px 20px 19px -1px rgba(0,0,0,0.39);
+  -moz-box-shadow: 1px 20px 19px -1px rgba(0,0,0,0.39);
+  border-radius: 20px;
+}
+
+/* 메인 폼 */
+.main-form {
+  display: flex;
+  width: 50%;
+  height: fit-content;
+  background: rgb(245, 245, 245);
+  flex-direction: column;
+  margin-right: auto;
+  margin-left: auto;
+  gap: 20px;
+  padding: 30px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  margin-bottom: 100px;
+}
+
+.main-info {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-info h1 {
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.main-info :nth-child(3){
+  font-size: 25px;
+}
+
+/* 공통 레퍼 스타일링 */
+.wrapper {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* 첫번째 섹션  */
+.section-one {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.section-one div {
+  width: 100%;
+}
+
+/* 두번째 섹션 */
+.section-two {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-two input {
+  width: fit-content;
+  margin: 15px;
+}
+
+.section-two li {
+  display: flex;
+  align-items: center;
+
+}
+
+/* 세번째 섹션 */
+.section-three {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.section-three div {
+  width: 100%;
+}
+
+/* 네번째 섹션 */
+.section-four {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.section-four div {
+  width: 100%;
+}
+
+/* 버튼 스타일링 */
+button {
+  padding: 12px;
+  border-radius: 100px;
+  border: none;
+  color: white;
+  background: rgb(30, 164, 218);
+  margin-top: 30px;
+  font-size: medium;
+}
+
+button:hover { 
+  background: white;
+  color: black;
+}

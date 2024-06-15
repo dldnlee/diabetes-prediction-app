@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diabetes Prediction</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+  {% from "_formhelpers.html" import render_field %}
+
+
+    <div class="main-container">
+      <form method="post" action="/predict" class="main-form">
+        <div class="wrapper section-one">
+          <div>
+            <p>나이</p>{{form.age}}
+          </div>
+          <div>
+            <p>성별</p>{{form.gender}}
+          </div>
+        </div>
+        <div class="wrapper section-two">
+          <div>
+            <p>History of Hypertension</p>{{form.hypertension}}
+          </div>
+          <div>
+            <p>History of heart disease</p>{{form.heart_disease}}
+          </div>
+        </div>
+        <div class="wrapper section-three">
+          <div>
+            <p>BMI Index</p>{{form.bmi}}
+          </div>
+          <div>
+            <p>Hemoglobin 수치(%)</p>{{form.hemoglobin}}
+          </div>
+        </div>
+        <div class="wrapper section-four">
+          <div>
+            <p>Blood Glucose</p>{{form.blood_glucose}}
+          </div>
+          <div>
+            <p>흡연 경력</p>{{form.smoking}}
+          </div>
+        </div>
+        <button>결과 예측</button>
+      </form>
+      <div class="main-info">
+        <img src="static/assets/school_logo.png" alt="연세대학교 로고" class="school-logo">
+        <h1>당뇨병 예측 모델</h1>
+        <h1>Diabetes Prediction Model</h1>
+      </div>
+    </div>
+
+
+</body>
+</html>
