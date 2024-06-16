@@ -4,7 +4,7 @@ import pickle
 import numpy as np
 
 # Load the model
-with open('data/xgb_best.pkl', 'rb') as f:
+with open('data/lgbm_best.pkl', 'rb') as f:
     model = pickle.load(f)
 
 app = Flask(__name__)
