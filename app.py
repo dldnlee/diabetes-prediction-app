@@ -37,12 +37,17 @@ def map_smoking_values(num):
   list[num] = 1
   return list
 
-def result_text(result):
-  if result == 0 :
-    return '없음'
-  elif result == 1:
-    return '있음'
+def result_text(classification, probability):
+
+  if classification == 0 :
+    proba = float(probability[0][0]) * 100
+    return ('음성 확률: ' + str(round(proba, 2)) + '%')
+  elif classification == 1:
+    proba = float(probability[0][1]) * 100
+    return ('양성 확률: ' + str(round(proba, 2)) + '%')
   else: return
+
+
 
 
 @app.route('/')
@@ -66,8 +71,9 @@ def predict():
     
     # Make prediction
     prediction = model.predict(features)
+    prediction_proba = model.predict_proba(features)
 
-    text = result_text(int(prediction[0]))
+    text = result_text(int(prediction[0]), list(prediction_proba))
 
     return render_template('results.html', results=text)
 if __name__ == '__main__':
